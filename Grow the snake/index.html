@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snake Game</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* ===== Card Container ===== */
+    #game-container {
+      background: #f0f0f3;
+      padding: 30px;
+      border-radius: 25px;
+      box-shadow: 10px 10px 30px rgba(0,0,0,0.1),
+                  -10px -10px 30px rgba(255,255,255,0.7);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 360px;
+    }
+
+    h2, h3 { color: #333; margin-bottom: 15px; }
+
+    #score { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+
+    /* ===== Canvas ===== */
+    canvas {
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: inset 4px 4px 10px rgba(0,0,0,0.1),
+                  inset -4px -4px 10px rgba(255,255,255,0.7);
+    }
+
+    /* ===== Input ===== */
+    input[type="text"] {
+      width: 80%;
+      padding: 10px;
+      border-radius: 12px;
+      border: none;
+      margin-bottom: 15px;
+      font-size: 16px;
+      background: #e0e0e0;
+      box-shadow: inset 4px 4px 6px rgba(0,0,0,0.1),
+                  inset -4px -4px 6px rgba(255,255,255,0.7);
+      outline: none;
+    }
+
+    /* ===== Buttons ===== */
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      background: #66a6ff;
+      color: #fff;
+      font-weight: bold;
+      transition: 0.2s;
+      box-shadow: 4px 4px 10px rgba(0,0,0,0.2),
+                  -4px -4px 10px rgba(255,255,255,0.6);
+      margin-bottom: 15px;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 6px 6px 12px rgba(0,0,0,0.25),
+                  -6px -6px 12px rgba(255,255,255,0.6);
+    }
+
+    /* ===== Leaderboard ===== */
+    ul#leaderboard {
+      list-style: none;
+      padding: 0;
+      width: 100%;
+    }
+
+    ul#leaderboard li {
+      background: #e0e0e0;
+      margin: 5px 0;
+      padding: 6px 10px;
+      border-radius: 12px;
+      box-shadow: inset 2px 2px 4px rgba(0,0,0,0.1),
+                  inset -2px -2px 4px rgba(255,255,255,0.7);
+      text-align: center;
+      font-weight: 500;
+    }
+
+    /* ===== Hide / Show Screens ===== */
+    #game-screen { display: none; }
+
+  </style>
+</head>
+<body>
+  <div id="game-container">
+    <!-- ===== Start Screen ===== -->
+    <div id="start-screen">
+      <h2>🐍 Snake Game</h2>
+      <input type="text" id="player" placeholder="Enter Your Name">
+      <button id="startBtn">Start Game</button>
+    </div>
+
+    <!-- ===== Game Screen ===== -->
+    <div id="game-screen">
+      <h2 id="score">Score: 0</h2>
+      <canvas id="gameCanvas" width="360" height="360"></canvas>
+      <button id="restartBtn">Restart</button>
+      <h3>🏆 Leaderboard</h3>
+      <ul id="leaderboard"></ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

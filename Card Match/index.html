@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Memory Card Match</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="wrap">
+    <!-- START SCREEN -->
+    <section id="startScreen" class="card start-card">
+      <h1>Memory Match</h1>
+      <p class="sub">Find all matching pairs as fast as you can</p>
+
+      <label class="label">Player name</label>
+      <input id="playerName" class="input" type="text" maxlength="20" placeholder="Your name" />
+
+      <div class="row">
+        <button id="startBtn" class="btn primary">Start Game</button>
+        <button id="howBtn" class="btn">How to play</button>
+      </div>
+
+      <div class="settings">
+        <label>Grid:</label>
+        <select id="gridSelect" class="input small">
+          <option value="4">4×4 (8 pairs)</option>
+          <option value="6">6×6 (18 pairs)</option>
+        </select>
+      </div>
+      <small class="hint">Tap any two cards to flip and match. Works on mobile — swipe not required.</small>
+    </section>
+
+    <!-- GAME SCREEN -->
+    <section id="gameScreen" class="hidden">
+      <header class="game-header">
+        <div>
+          <div class="player">Player: <strong id="playerLabel"></strong></div>
+          <div class="meta">Pairs found: <span id="found">0</span>/<span id="totalPairs">8</span></div>
+        </div>
+        <div>
+          <div class="timer">Time: <span id="timer">0</span>s</div>
+          <div class="controls">
+            <button id="restartBtn" class="btn">Restart</button>
+            <button id="quitBtn" class="btn">Quit</button>
+          </div>
+        </div>
+      </header>
+
+      <section id="boardContainer" class="board-card">
+        <div id="board" class="board"></div>
+      </section>
+
+      <div class="bottom-row">
+        <button id="showLeaderBtn" class="btn">Leaderboard</button>
+        <button id="clearLeaderBtn" class="btn">Clear Leaderboard</button>
+      </div>
+    </section>
+
+    <!-- LEADERBOARD SCREEN -->
+    <section id="leaderScreen" class="card hidden">
+      <h2>Leaderboard (Top 10)</h2>
+      <ol id="leaderList" class="leader-list"></ol>
+      <div class="row">
+        <button id="leaderBackBtn" class="btn">Back</button>
+        <button id="leaderClearBtn" class="btn">Clear</button>
+      </div>
+    </section>
+
+    <!-- HOW TO PLAY (modal-like small card) -->
+    <section id="howScreen" class="card hidden small-card">
+      <h3>How to play</h3>
+      <p>Tap two cards to flip. If they match they stay revealed. Find all pairs as quickly as possible. Lower time = better score.</p>
+      <div class="row"><button id="howClose" class="btn primary">Got it</button></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
