@@ -1,0 +1,51 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>2048 — Mobile Ready</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="center">
+    <div id="startScreen" class="card">
+      <h1>2048</h1>
+      <input id="playerName" type="text" placeholder="Enter your name" maxlength="20" />
+      <div class="row">
+        <button id="startBtn" class="primary">Start Game</button>
+        <button id="viewBoardBtn">Leaderboard</button>
+      </div>
+      <p class="hint">Swipe to move (mobile) or use arrow keys (desktop).</p>
+    </div>
+
+    <section id="gameScreen" class="hidden">
+      <header class="header">
+        <div class="title">2048</div>
+        <div class="scoreBox">Score <div id="score">0</div></div>
+      </header>
+
+      <div id="boardContainer" class="boardContainer">
+        <div id="grid" class="grid"></div>
+      </div>
+
+      <div class="controls">
+        <button id="undoBtn">Undo</button>
+        <button id="restartBtn" class="primary">Restart</button>
+        <button id="backBtn">Back</button>
+      </div>
+    </section>
+
+    <section id="leaderScreen" class="card hidden">
+      <h2>Leaderboard</h2>
+      <ol id="leaderList"></ol>
+      <div class="row">
+        <button id="clearBoardBtn">Clear</button>
+        <button id="closeBoardBtn" class="primary">Close</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
