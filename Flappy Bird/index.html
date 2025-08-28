@@ -1,0 +1,43 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Flappy — Play & Leaderboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="startScreen" class="screen center">
+    <h1>Flappy Bird</h1>
+    <input id="playerName" type="text" placeholder="Enter your name" maxlength="20" />
+    <button id="playBtn" class="btn primary">Play Game</button>
+  </div>
+
+  <div id="gameScreen" class="screen" hidden>
+    <div id="topBar">
+      <div id="info">Player: <span id="displayName"></span></div>
+      <div id="stats">Level: <span id="displayLevel">1</span> · Score: <span id="displayScore">0</span></div>
+    </div>
+    <div id="canvasWrap"><canvas id="gameCanvas"></canvas></div>
+    <div id="controls">
+      <button id="pauseBtn" class="btn">Pause</button>
+      <button id="restartBtn" class="btn">Restart</button>
+    </div>
+  </div>
+
+  <div id="leaderboardScreen" class="screen center" hidden>
+    <h2>Leaderboard (Top 10)</h2>
+    <table id="leaderTable">
+      <thead><tr><th>#</th><th>Name</th><th>Score</th><th>Level</th><th>When</th></tr></thead>
+      <tbody></tbody>
+    </table>
+    <div style="margin-top:12px;">
+      <button id="playAgainBtn" class="btn primary">Play Again</button>
+      <button id="clearBtn" class="btn">Clear Leaderboard</button>
+    </div>
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>
